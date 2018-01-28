@@ -1,18 +1,20 @@
 import sys
 import re
 import timeit
+import collections
+
 
 def load_data(file_path):
     with open(file_path, "r") as file:
         return file.readlines()
 
 
-def get_words(text):
-    dictionary = {}
+def get_most_frequent_words(text, number_of_words):
+    dictionary = collections.Counter()
     for line in text:
-        words = re.findall("\w+", line)
+        words = re.findall("\w+", line.lower())
         dictionary = add_to_dict(words, dictionary)
-    return dictionary
+    return dictionary.most_common(number_of_words)
 
 
 def add_to_dict(input_words, dictionary):
@@ -22,18 +24,6 @@ def add_to_dict(input_words, dictionary):
         else:
             dictionary[word] = 1
     return dictionary
-
-
-def print_most_frequent_words(dictionary, num):
-    i = 0
-    print(num, " most frequent words: ")
-    for word_in_dict in sorted(dictionary.items(),
-                               key=lambda x: x[1],
-                               reverse=True):
-        print(word_in_dict[0], " : ", word_in_dict[1])
-        i += 1
-        if i == num:
-            break
 
 
 if __name__ == "__main__":
@@ -48,5 +38,9 @@ if __name__ == "__main__":
         print("Please, put a file name as a parameter.\n"
               "For example: 'python pprint_json.py in.json' ")
         sys.exit(0)
-    dictionary = get_words(input_data)
-    print_most_frequent_words(dictionary, number_of_words)
+
+    dictionary = get_most_frequent_words(input_data, number_of_words)
+    print(number_of_words, "of the most frequent words")
+    for word in dictionary:
+        print(word[0], " : ", word[1])
+
