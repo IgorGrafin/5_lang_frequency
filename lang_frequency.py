@@ -38,7 +38,7 @@ def print_most_frequent_words(dictionary, num):
 
 if __name__ == "__main__":
     input_data = []
-    number_of_words = 15
+    number_of_words = 10
     try:
         input_data = load_data(sys.argv[1])
     except FileNotFoundError:
