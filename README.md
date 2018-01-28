@@ -18,17 +18,17 @@ Launching on Windows via CMD or PowerShell is the same.
 Example:
 ```
 python lang_frequency.py Dikkens_Ch._Holodnyiyi_Dom.txt
-10  most frequent words: 
-и  :  11832
-в  :  6793
-не  :  6436
-что  :  5646
-я  :  4892
-на  :  4308
-с  :  3385
-он  :  3046
-как  :  2975
-его  :  2283
+10 of the most frequent words
+и  :  12430
+в  :  7258
+не  :  6873
+я  :  6266
+что  :  5886
+на  :  4437
+он  :  3652
+с  :  3493
+как  :  3262
+а  :  2606
 ```
 
 # Project Goals
