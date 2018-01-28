@@ -15,7 +15,8 @@ $ python lang_frequency.py <path to file>
 ```
 Launching on Windows via CMD or PowerShell is the same. 
 
-```Example:
+Example:
+```
 python lang_frequency.py Dikkens_Ch._Holodnyiyi_Dom.txt
 10  most frequent words: 
 и  :  11832
