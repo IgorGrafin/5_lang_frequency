@@ -23,7 +23,7 @@ if __name__ == "__main__":
         sys.exit("Please, put a file name as a parameter.\n"
                  "For example: 'python pprint_json.py in.json' ")
 
-    dictionary = get_most_frequent_words(input_data, number_of_words)
+    words_list = get_most_frequent_words(input_data, number_of_words)
     print(number_of_words, "of the most frequent words")
-    for word, count in dictionary:
+    for word, count in words_list:
         print(word, " : ", count)
